@@ -4,6 +4,10 @@ import Link from "next/link";
 
 import { api } from "~/utils/api";
 
+// TODO : create home page
+// assignees : ToEzBit
+// labels: help wanted
+
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
 
