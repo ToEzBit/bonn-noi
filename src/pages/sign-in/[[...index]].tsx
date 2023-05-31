@@ -1,5 +1,13 @@
 import { SignIn } from "@clerk/nextjs";
 
-export default function Page() {
-  return <SignIn />;
+function SignInPage() {
+  return (
+    <div className="flex h-screen">
+      <div className="m-auto">
+        <SignIn />
+      </div>
+    </div>
+  );
 }
+
+export default SignInPage;
