@@ -1,5 +1,12 @@
 import { SignUp } from "@clerk/nextjs";
-
-export default function Page() {
-  return <SignUp />;
+function SignUpPage() {
+  return (
+    <div className="flex h-screen">
+      <div className="m-auto">
+        <SignUp />
+      </div>
+    </div>
+  );
 }
+
+export default SignUpPage;
