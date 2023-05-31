@@ -6,8 +6,9 @@
     "build": "next build",
     "dev": "next dev",
     "postinstall": "prisma generate",
-    "lint": "next lint",
-    "start": "next start"
+    "lint": "next lint --max-warnings=0",
+    "start": "next start",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@prisma/client": "^4.11.0",
@@ -39,7 +40,8 @@
     "prettier-plugin-tailwindcss": "^0.2.6",
     "prisma": "^4.11.0",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "husky": "^8.0.0"
   },
   "ct3aMetadata": {
     "initVersion": "7.13.0"
