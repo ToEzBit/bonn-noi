@@ -18,6 +18,7 @@ specifiers:
   autoprefixer: ^10.4.14
   eslint: ^8.36.0
   eslint-config-next: ^13.4.1
+  husky: ^8.0.0
   next: ^13.4.1
   postcss: ^8.4.21
   prettier: ^2.8.6
@@ -55,6 +56,7 @@ devDependencies:
   autoprefixer: 10.4.14_postcss@8.4.23
   eslint: 8.41.0
   eslint-config-next: 13.4.3_opaykosi7ysrbskpnffskmbrki
+  husky: 8.0.3
   postcss: 8.4.23
   prettier: 2.8.8
   prettier-plugin-tailwindcss: 0.2.8_prettier@2.8.8
@@ -1710,6 +1712,12 @@ packages:
   /human-signals/4.3.1:
     resolution: {integrity: sha512-nZXjEF2nbo7lIw3mgYjItAfgQXog3OjJogSbKa2CQIIvSGWcKgeJnQlNXip6NglNzYH45nSRiEVimMvYL8DDqQ==}
     engines: {node: '>=14.18.0'}
+    dev: true
+
+  /husky/8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /ignore/5.2.4:
