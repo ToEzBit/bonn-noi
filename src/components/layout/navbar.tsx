@@ -1,11 +1,11 @@
 import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
-import { ChatBubbleBottomCenterIcon } from "@heroicons/react/24/solid";
 import { useAuth } from "@clerk/nextjs";
-import isEmpty from "lodash/isEmpty";
+
+import CreatePost from "~/features/post/component/CreatePost";
 
 function NavBar() {
-  const { userId } = useAuth();
+  const { isSignedIn, isLoaded } = useAuth();
 
   return (
     <header className="flex justify-between border border-slate-500 p-4 text-slate-300">
@@ -14,15 +14,13 @@ function NavBar() {
       </div>
       <div>
         <ul className="flex gap-4">
-          {isEmpty(userId) && (
+          {!isSignedIn && isLoaded && (
             <li className="hover:text-cyan-500">
               <Link href="/sign-in">Sign in</Link>
             </li>
           )}
 
-          <li>
-            <ChatBubbleBottomCenterIcon className="h-6 w-6  cursor-pointer text-cyan-500 " />
-          </li>
+          <li>{isSignedIn && <CreatePost />}</li>
           <li>
             <UserButton afterSignOutUrl="/" />
           </li>

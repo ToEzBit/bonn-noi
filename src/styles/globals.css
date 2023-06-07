@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: CascadiaCode;
+  src: url("../../public/font/CascadiaCode.ttf") format("truetype");
+}

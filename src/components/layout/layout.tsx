@@ -7,7 +7,7 @@ interface Props {
 
 export default function Layout({ children }: Props) {
   return (
-    <div className="bg-slate-800">
+    <div className="bg-slate-800 font-primary">
       <NavBar />
       {children}
     </div>
