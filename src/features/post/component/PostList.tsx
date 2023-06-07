@@ -1,21 +1,30 @@
-import Post from "./Post";
+import isEmpty from "lodash/isEmpty";
+import map from "lodash/map";
 
-interface Post {
-  id: number;
-  authorId: number;
-  message: string;
-  createdAt: Date;
-}
+import { api } from "~/utils/api";
+import PostItem from "./PostItem";
 
-function PostList({ posts }: { posts: Post[] }) {
+function PostList() {
+  const { data: posts, isLoading: postLoading } = api.post.getAll.useQuery();
+
+  if (postLoading) {
+    // TODO: create loading animation
+    // labels: good first issue
+    return <p>loading ...</p>;
+  }
+
+  if (isEmpty(posts)) {
+    return null;
+  }
+
   return (
-    <ul>
-      {posts.map((post) => (
-        <li key={post.id}>
-          <Post />
-        </li>
-      ))}
-    </ul>
+    <div className=" mt-4  w-2/6 p-4">
+      <ul className="flex flex-col gap-4">
+        {map(posts, ({ post, author }) => (
+          <PostItem post={post} author={author} key={post.id} />
+        ))}
+      </ul>
+    </div>
   );
 }
 

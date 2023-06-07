@@ -1,22 +1,14 @@
 import { type NextPage } from "next";
 
-// import { api } from "~/utils/api";
-
-// TODO : create home page
-// assignees : ToEzBit
-// labels: help wanted
+import PostList from "~/features/post/component/PostList";
 
 const Home: NextPage = () => {
-  // const hello = api.example.hello.useQuery({ text: "from tRPC" });
-
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-center ">
-        <div className="">
-          Hello HomePage
-        </div>
+      <main className="flex min-h-screen  justify-center ">
+        <PostList />
       </main>
     </>
   );
-}
+};
 export default Home;
