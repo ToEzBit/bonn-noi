@@ -1,6 +1,8 @@
 import isEmpty from "lodash/isEmpty";
 import map from "lodash/map";
 
+import Loader from "~/components/ui/loader";
+
 import { api } from "~/utils/api";
 import PostItem from "./PostItem";
 
@@ -8,9 +10,7 @@ function PostList() {
   const { data: posts, isLoading: postLoading } = api.post.getAll.useQuery();
 
   if (postLoading) {
-    // TODO: create loading animation
-    // labels: good first issue
-    return <p>loading ...</p>;
+    return <Loader />;
   }
 
   if (isEmpty(posts)) {
