@@ -1,6 +1,8 @@
 import isEmpty from "lodash/isEmpty";
 import map from "lodash/map";
 
+import { ColorRing } from "react-loader-spinner";
+
 import { api } from "~/utils/api";
 import PostItem from "./PostItem";
 
@@ -8,9 +10,16 @@ function PostList() {
   const { data: posts, isLoading: postLoading } = api.post.getAll.useQuery();
 
   if (postLoading) {
-    // TODO: create loading animation
-    // labels: good first issue
-    return <p>loading ...</p>;
+    return (
+      <ColorRing
+        visible
+        height="80"
+        width="80"
+        ariaLabel="blocks-loading"
+        wrapperClass="blocks-wrapper"
+        colors={["#4158D0", "#4158D0", "#C850C0", "#FFCC70", "#FFCC70"]}
+      />
+    );
   }
 
   if (isEmpty(posts)) {
