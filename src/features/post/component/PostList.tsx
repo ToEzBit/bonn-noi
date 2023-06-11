@@ -9,7 +9,9 @@ import PostItem from "./PostItem";
 function PostList() {
   const { data: posts, isLoading: postLoading } = api.post.getAll.useQuery();
 
-  if (postLoading) return <Loader />;
+  if (postLoading) {
+    return <Loader />;
+  }
 
   if (isEmpty(posts)) {
     return null;
